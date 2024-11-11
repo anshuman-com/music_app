@@ -6,7 +6,7 @@ import MusicPlayer from './components/MusicPlayer';
 
 function App() {
     return (
-        <div className="app-container">
+        <div className="app-container overflow-visible">
             <div className="sidebar-container">
                 <Sidebar />
             </div>
@@ -15,9 +15,7 @@ function App() {
             </div>
             {/* New container for bottom components */}
             <div className="bottom-container">
-                <div className="song-container">
                     <SongList />
-                </div>
                 <div className="player-controls-container">
                     <MusicPlayer />
                 </div>

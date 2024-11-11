@@ -1,5 +1,6 @@
-// SongList.js
+import { px } from 'framer-motion';
 import React from 'react';
+import { FaMusic } from 'react-icons/fa'; // Importing music icon
 
 const SongList = () => {
     const songs = [
@@ -11,28 +12,37 @@ const SongList = () => {
     ];
 
     return (
-        <div className="song-list-container p-4 rounded-lg">
-            <h3 className="text-lg font-bold mb-2">Popular</h3>
-            <table className="w-full">
+        <div
+            className="song-list-container p-6 rounded-lg w-full max-w-screen-lg mx-auto mt-10"
+            style={{ left: '1000px' }} // Adjusted left to move the section further to the right
+        >
+            <h3 className="text-2xl font-bold mb-3 text-white">Popular</h3> {/* Reduced margin */}
+            <table className="w-full text-base text-white">
                 <thead>
-                <tr className="text-left">
-                    <th className="py-2">#</th>
-                    <th>Title</th>
-                    <th>Playing</th>
-                    <th>Time</th>
-                    <th>Album</th>
-                </tr>
+                    <tr className="text-left">
+                        <th className="py-2 px-4">#</th> {/* Reduced padding */}
+                        <th className="py-2 px-4">Title</th>
+                        <th className="py-2 px-4">Playing</th>
+                        <th className="py-2 px-4">Time</th>
+                        <th className="py-2 px-4">Album</th>
+                    </tr>
                 </thead>
                 <tbody>
-                {songs.map((song, index) => (
-                    <tr key={song.id} className="hover:bg-gray-700 cursor-pointer">
-                        <td className="py-2">{index + 1}</td>
-                        <td>{song.title}</td>
-                        <td>{song.plays}</td>
-                        <td>{song.duration}</td>
-                        <td>{song.album}</td>
-                    </tr>
-                ))}
+                    {songs.map((song, index) => (
+                        <tr 
+                            key={song.id} 
+                            className="hover:bg-[#520100] cursor-pointer transition-colors duration-300"
+                        >
+                            <td className="py-2 px-4">{index + 1}</td> {/* Reduced padding */}
+                            <td className="flex items-center py-2 px-4">
+                                <FaMusic className="text-xl mr-3" /> {/* Small song/music icon */}
+                                {song.title}
+                            </td>
+                            <td className="py-2 px-4">{song.plays}</td>
+                            <td className="py-2 px-4">{song.duration}</td>
+                            <td className="py-2 px-4">{song.album}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
