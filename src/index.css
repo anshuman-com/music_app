@@ -1,0 +1,358 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.player-container {
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.now-playing-header{
+    padding: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.now-playing {
+    margin-bottom: 20px;
+}
+
+.song-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+
+.songs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.song-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.song-item.active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.song-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #000000, #7b0000);
+    color: white;
+}
+
+.music-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.music-player-card {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px; /* Defined width */
+    height: 400px; /* Increased height slightly to fit buttons */
+    padding: 20px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.album-art img {
+    width: 190px; /* Smaller album art */
+    height: 130px;
+    border-radius: 8px;
+}
+
+.song-details {
+    text-align: center;
+}
+
+/* Control buttons */
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.control-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 45px; /* Square buttons */
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; /* Slightly rounded for a square-like shape */
+    font-size: 18px; /* Larger icon size */
+    cursor: pointer;
+}
+.control-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.play-pause {
+    width: 50px; /* Larger play/pause button */
+    height: 50px;
+    font-size: 22px; /* Bigger play/pause icon */
+}
+
+.control-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Title and artist styling */
+.song-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.artist-name {
+    font-size: 18px;
+    color: #cccccc;
+    text-align: center;
+}
+
+/* Optional: Styling for the progress bar */
+.progress-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.progress-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.artist-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.artist-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-info h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.artist-info p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #cccccc;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 20px;
+}
+
+.bottom-container {
+    position: fixed;
+    bottom: 0;
+    left: 20%;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.song-container {
+    flex: 1;
+    max-width: 60%;
+    overflow-y: auto;
+}
+
+.player-controls-container {
+    width: 300px;
+    margin-left: 20px;
+}
+
+
+.songs-list {
+    list-style: none;
+    padding: 0;
+}
+
+.song-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.song-item.active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.music-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.music-controls button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.music-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: #0E0E0E;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+.player-controls-container{
+    background: #0E0E0E;
+}
+
+.sidebar-container {
+    width: 20%;
+    background-color: #f3f3f3;
+    border-right: 1px solid #ddd;
+}
+.brand {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #DF342D;
+}
+
+.nav-menu {
+    flex-grow: 1;
+}
+
+.menu-top, .menu-general {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.menu-item .menu-icon {
+    color: #DF342D;
+    margin-right: 10px;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.general-section {
+    margin-top: 30px;
+}
+
+.general-section h3 {
+    margin: 0 0 10px 0;
+    color: #DF342D;
+    font-size: 16px;
+}
