@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaMusic, FaPlay, FaPause } from 'react-icons/fa'; // Icons for play/pause
+import { FaMusic, FaPlay, FaPause } from 'react-icons/fa';
 import { Howl } from 'howler';
 import {
   DndContext,
@@ -16,9 +16,9 @@ import {
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
-const SongList = () => {
+const SongList = ({ onSelectSong }) => {
   const initialSongs = [
-    { id: '1', title: 'Billie Jean', plays: '1,040,811,084', duration: '4:53', album: 'Thriller 25', fileUrl: '/audio/billie_jean.mp3' },
+    { id: '1', title: 'Billie Jean', plays: '1,040,811,084', duration: '4:53', album: 'Thriller 25', fileUrl: '/songs/1.m4a' },
     { id: '2', title: 'Beat It', plays: '643,786,045', duration: '4:18', album: 'Thriller 25', fileUrl: '/audio/beat_it.mp3' },
     { id: '3', title: 'Smooth Criminal', plays: '407,234,004', duration: '4:17', album: 'Bad 25', fileUrl: '/audio/smooth_criminal.mp3' },
     { id: '4', title: "Don't Stop 'Til You Get Enough", plays: '316,391,952', duration: '6:05', album: 'Off The Wall', fileUrl: '/audio/dont_stop.mp3' },
@@ -26,31 +26,33 @@ const SongList = () => {
   ];
 
   const [songs, setSongs] = useState(initialSongs);
-  const [currentSound, setCurrentSound] = useState(null);
   const [currentPlayingId, setCurrentPlayingId] = useState(null);
+  const [currentSound, setCurrentSound] = useState(null);
 
-  // Sensors for drag-and-drop
   const sensors = useSensors(useSensor(PointerSensor));
 
   const handlePlayPause = (song) => {
     if (currentPlayingId === song.id) {
-      currentSound.pause();
-      setCurrentPlayingId(null);
+      if (currentSound) {
+        currentSound.pause();
+        setCurrentPlayingId(null);
+      }
     } else {
       if (currentSound) {
         currentSound.stop();
       }
-
       const sound = new Howl({ src: [song.fileUrl], html5: true });
       sound.play();
       setCurrentSound(sound);
       setCurrentPlayingId(song.id);
     }
+
+    // Trigger the parent handler to sync the selected song in PlayerControls
+    onSelectSong(song);
   };
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
-
     if (active.id !== over.id) {
       const oldIndex = songs.findIndex((song) => song.id === active.id);
       const newIndex = songs.findIndex((song) => song.id === over.id);
@@ -74,6 +76,7 @@ const SongList = () => {
         {...attributes}
         {...listeners}
         className="hover:bg-[#520100] cursor-pointer transition-colors duration-300"
+        onClick={() => handlePlayPause(song)}
       >
         <td className="py-2 px-4">{index + 1}</td>
         <td className="flex items-center py-2 px-4">
