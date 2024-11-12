@@ -7,17 +7,17 @@ const Header = () => {
       {/* Top Section with Headings and Search Bar */}
       <div className="flex items-center w-full">
         {/* Headings */}
-        <h2 className="text-white text-xl font-bold">Music</h2>
-        <h2 className="text-white text-xl font-bold ml-6">Podcast</h2> {/* Increased margin-left */}
-        <h2 className="text-white text-xl font-bold ml-6">Live</h2> {/* Increased margin-left */}
-        <h2 className="text-white text-xl font-bold ml-6">Radio</h2> {/* Increased margin-left */}
+        <h2 className="text-white text-xl font-bold ml-10">Music</h2>
+        <h2 className="text-white text-xl font-bold ml-8">Podcast</h2> {/* Increased margin-left */}
+        <h2 className="text-white text-xl font-bold ml-8">Live</h2> {/* Increased margin-left */}
+        <h2 className="text-white text-xl font-bold ml-8">Radio</h2> {/* Increased margin-left */}
         
         {/* Search Bar (with increased gap) */}
-        <div className="flex items-center ml-96"> {/* Increased margin-left */}
+        <div className="flex items-center ml-64"> {/* Increased margin-left */}
           <input
             type="text"
             placeholder="Anshuman Shukla"
-            className="bg-transparent border-2 border-white text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="bg-transparent border-2 border-white text-white py-2 px-10 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
           />
         </div>
       </div>
