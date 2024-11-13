@@ -18,10 +18,10 @@ import { CSS } from '@dnd-kit/utilities';
 const SongList = ({ onSelectSong }) => {
   const initialSongs = [
     { id: '1', title: 'Billie Jean', plays: '1,040,811,084', duration: '4:53', album: 'Thriller 25', fileUrl: '/songs/1.m4a', photo: '/R.jpeg' },
-    { id: '2', title: 'Beat It', plays: '643,786,045', duration: '4:18', album: 'Thriller 25', fileUrl: '/audio/beat_it.mp3', photo: '/R.jpeg' },
-    { id: '3', title: 'Smooth Criminal', plays: '407,234,004', duration: '4:17', album: 'Bad 25', fileUrl: '/audio/smooth_criminal.mp3', photo: '/R.jpeg' },
-    { id: '4', title: "Kill Bill", plays: '316,391,952', duration: '6:05', album: 'Off The Wall', fileUrl: '/audio/dont_stop.mp3', photo: './R.jpeg' },
-    { id: '5', title: 'Rock With You', plays: '268,187,218', duration: '3:38', album: 'Off The Wall', fileUrl: '/audio/rock_with_you.mp3', photo: '/R.jpeg' },
+    { id: '2', title: 'Beat It', plays: '643,786,045', duration: '4:18', album: 'Thriller 25', fileUrl: '/songs/2.m4a', photo: '/R.jpeg' },
+    { id: '3', title: 'Smooth Criminal', plays: '407,234,004', duration: '4:17', album: 'Bad 25', fileUrl: '/songs/3.m4a', photo: '/R.jpeg' },
+    { id: '4', title: "Kill Bill", plays: '316,391,952', duration: '6:05', album: 'Off The Wall', fileUrl: '/songs/2.m4a', photo: './R.jpeg' },
+    { id: '5', title: 'Rock With You', plays: '268,187,218', duration: '3:38', album: 'Off The Wall', fileUrl: '/songs/2.m4a', photo: '/R.jpeg' },
   ];
 
   const [songs, setSongs] = useState(initialSongs);

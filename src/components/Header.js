@@ -17,7 +17,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Anshuman Shukla"
-            className="bg-transparent border-2 border-white text-white py-2 px-10 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="bg-transparent border-2 border-grey text-white py-2 px-10 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
           />
         </div>
       </div>
